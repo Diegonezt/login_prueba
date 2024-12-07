@@ -1,5 +1,5 @@
 <?php
-    require_once("c://xampp/htdocs/login/controller/homeController.php");
+    require_once("c://xampp/htdocs/login_prueba/controller/homeController.php");
     session_start();
     $obj = new homeController();
     $correo = $obj->limpiarcorreo($_POST['correo']);
