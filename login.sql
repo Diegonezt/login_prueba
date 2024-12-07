@@ -3,4 +3,6 @@ CREATE TABLE usuarios(
 	correo VARCHAR(150) NOT NULL unique KEY,
 	PASSWORD VARCHAR(150) NOT null
 	
-)
+);
+
+ALTER TABLE usuario ADD Rut varchar (15) UNIQUE NOT null;
