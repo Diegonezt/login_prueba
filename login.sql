@@ -6,3 +6,7 @@ CREATE TABLE usuarios(
 );
 
 ALTER TABLE usuario ADD Rut varchar (15) UNIQUE NOT null;
+
+ALTER TABLE usuario CHANGE Correo correo VARCHAR(150);
+ALTER TABLE usuario CHANGE PASSWORD password VARCHAR(150);
+ALTER TABLE usuario CHANGE Rut rut VARCHAR(150);
