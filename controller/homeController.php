@@ -9,8 +9,8 @@ class homeController {
 
     // Guardar usuario con correo, contraseña y RUT
     public function guardarUsuario($correo, $contraseña, $rut) {
-        $correoLimpio = $this->limpiarCorreo($correo);
-        $contraseñaEncriptada = $this->encriptarContraseña($this->limpiarCadena($contraseña));
+        $correoLimpio = $this->limpiarcorreo($correo);
+        $contraseñaEncriptada = $this->encriptarcontraseña($this->limpiarcadena($contraseña));
         $rutLimpio = $this->limpiarRUT($rut);
 
         $valor = $this->MODEL->agregarNuevoUsuario($correoLimpio, $contraseñaEncriptada, $rutLimpio);
@@ -18,7 +18,7 @@ class homeController {
     }
 
     // Limpiar cadenas de texto
-    public function limpiarCadena($campo) {
+    public function limpiarcadena($campo) {
         $campo = strip_tags($campo);
         $campo = filter_var($campo, FILTER_UNSAFE_RAW);
         $campo = htmlspecialchars($campo);
@@ -26,7 +26,7 @@ class homeController {
     }
 
     // Limpiar correos electrónicos
-    public function limpiarCorreo($campo) {
+    public function limpiarcorreo($campo) {
         $campo = strip_tags($campo);
         $campo = filter_var($campo, FILTER_SANITIZE_EMAIL);
         $campo = htmlspecialchars($campo);
@@ -41,13 +41,13 @@ class homeController {
     }
 
     // Encriptar contraseña
-    public function encriptarContraseña($contraseña) {
+    public function encriptarcontraseña($contraseña) {
         return password_hash($contraseña, PASSWORD_DEFAULT);
     }
 
     // Verificar usuario
-    public function verificarUsuario($correo, $contraseña) {
-        $keydb = $this->MODEL->obtenerClave($correo);
+    public function verificarusuario($correo, $contraseña) {
+        $keydb = $this->MODEL->obtenerclave($correo);
         return (password_verify($contraseña, $keydb)) ? true : false;
     }
 }

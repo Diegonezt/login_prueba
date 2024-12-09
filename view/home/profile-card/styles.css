@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "tourney";
+  src: url(Fonts/Tourney-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+  font-family: "marker";
+  src: url(Fonts/PermanentMarker-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0A1931;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: 40%;
+  width: 900px;
+  height: 900px;
+  background: linear-gradient(#7952B3, #FFC107);
+  border-radius: 50%;
+}
+
+.card {
+  position: relative;
+  width: 508px;
+  height: 314px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+.card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+.card .face.front::before {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.card .face.front::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.card .face.front .frontend {
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  color: #E1E8EB;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+  font-family: "marker";
+}
+.card .face.front .developer {
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  color: #E1E8EB;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+  font-family: "marker";
+}
+.card .face.front .profile {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  max-width: 64px;
+  border-radius: 50%;
+}
+.card .face.front .icon {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  max-width: 64px;
+}
+.card .face.front .hello {
+  position: absolute;
+  bottom: 130px;
+  left: 40px;
+  color: #E1E8EB;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-shadow: 0 2px 1px #0005;
+  font-family: "tourney";
+}
+.card .face.front .id-name {
+  position: absolute;
+  bottom: 55px;
+  left: 40px;
+  color: #E1E8EB;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-family: "marker";
+}
+.card .face.back .backbar {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 60px;
+  background: #000;
+}
+.card .face.back .ccvtext {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+}
+.card .face.back .ccvtext h5 {
+  color: #E1E8EB;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "marker";
+  letter-spacing: 2px;
+}
+.card .face.back .ccvtext .whiteBar {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  background: #E1E8EB;
+  margin-top: 5px;
+}
+.card .face.back .ccvtext .ccv {
+  font-family: "tourney";
+  position: relative;
+  top: -35px;
+  left: 400px;
+  background: #ccc;
+  color: #111;
+  width: 50px;
+  height: 30px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 300ms;
+}
+.card .face.back .ccvtext .ccv:hover {
+  transform: rotate(90deg);
+}
+.card .face.back .text {
+  font-family: "marker";
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+
+.card:hover .face.front {
+  transform: rotateY(180deg);
+}
+
+.card .face.back {
+  transform: rotateY(180deg);
+}
+
+.card:hover .face.back {
+  transform: rotateY(360deg);
+}
+
+/*# sourceMappingURL=styles.css.map */

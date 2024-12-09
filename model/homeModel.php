@@ -24,7 +24,7 @@ class homeModel {
     }
 
     // Obtener la clave (contraseña) del usuario por su correo
-    public function obtenerClave($correo) {
+    public function obtenerclave($correo) {
         $statement = $this->PDO->prepare("SELECT password FROM usuario WHERE correo = :correo");
         $statement->bindParam(":correo", $correo);
         return ($statement->execute()) ? $statement->fetch()['password'] : false;

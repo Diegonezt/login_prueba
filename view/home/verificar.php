@@ -4,7 +4,7 @@
     $obj = new homeController();
     $correo = $obj->limpiarcorreo($_POST['correo']);
     $contraseña = $obj->limpiarcadena($_POST['contraseña']);
-    $bandera = $obj->verificarusuario($correo,$contraseña);
+    $bandera = $obj->verificarusuario($correo, $contraseña);
     if($bandera){
         $_SESSION['usuario'] = $correo;
         header("Location:panel_control.php");

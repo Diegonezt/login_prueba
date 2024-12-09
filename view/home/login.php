@@ -6,13 +6,9 @@
 ?>
 
 <div class="fondo-login">
-    <div class="icon">
-        <a href="/login_prueba/index.php">
-            <i class="fa-solid fa-shield-dog dog-icon"></i>
-        </a>
-    </div>
+   
     <div class="titulo">
-        Inicia sesion en DogCom
+        Inicia sesion en Nezt Pepinillo
     </div>
     <form action="verificar.php" method="POST" class="col-3 login" autocomplete="off">
         <div class="mb-3">
@@ -26,9 +22,9 @@
                     <i id="eyepassword" class="fa-solid fa-eye changePassword"></i>
                 </button>
             </div>
-            <input type="password" name="password" class="form-control" id="password" placeholder="*********">
+            <input type="password" name="contraseña" class="form-control" id="password" placeholder="*********">
         </div>
-        <?php if(!empty($_GET['erro'])):?>
+        <?php if(!empty($_GET['error'])):?>
             <div id="alertError" style="margin: auto;" class="alert alert-danger mb-2" role="alert">
                 <?= !empty($_GET['error']) ? $_GET['error'] : ""?>
             </div>
