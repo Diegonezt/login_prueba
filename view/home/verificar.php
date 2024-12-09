@@ -7,9 +7,9 @@
     $bandera = $obj->verificarusuario($correo, $contraseña);
     if($bandera){
         $_SESSION['usuario'] = $correo;
-        header("Location:panel_control.php");
+        header("Location:profile-card/index.html");
     }else{
-        $error = "<li>Las claves son incorrectas</li>";
+        $error = "<li>Credenciales incorrectas</li>";
         header("Location:login.php?error=".$error);
     }
 ?>
